@@ -1,0 +1,42 @@
+.nav {
+    background-color: #252525;
+}
+
+.nav-items {
+    padding: 20px 0;
+    font-family: 'Roboto', sans-serif; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item {
+     padding: 0px 30px;
+     color: white;
+}
+
+.item:hover {
+    color: #D64646;
+    text-decoration: none;
+}
+
+.logo-item {
+    height: 40px;
+}
+
+.logo-item img {
+    height: 100%;
+}
+
+.right-links {
+    padding-right: 40px;
+}
+
+.right-links .item {
+    color: #6666ff;
+}
+
+.right-links .item:hover {
+    color: #D64646;
+}
