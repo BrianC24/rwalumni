@@ -1,5 +1,8 @@
 .nav {
     background-color: #252525;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
 }
 
 .nav-items {
@@ -39,4 +42,8 @@
 
 .right-links .item:hover {
     color: #D64646;
+}
+
+.content {
+    padding-top: 80px;
 }

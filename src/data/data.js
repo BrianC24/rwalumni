@@ -1,11 +1,13 @@
 import uuid from 'uuid/v1';
-import profile from '../assets/contacts.gif';
+import profile from '../assets/profile.png';
 
 export const data = {
    users: [
         {
             id: uuid(),
             username: 'bcanlas',
+            fName: 'Brian',
+            lName: 'Canlas',
             password: 'sample',
             email: 'sample@gmail.com',
             phone: '(111) 111 - 111',
@@ -16,16 +18,17 @@ export const data = {
                     jobTitle: 'Dev',
                     dateApplied: '10/10/18',
                     contact: 'Harrison (111) 111-111',
-                    recrutier: 'NA',
+                    recruiter: 'NA',
                     lastContact: '',
                     phase: 'Offer',
-                    Notes: 'Cool cool cool'
+                    notes: 'Cool cool cool'
                 }
             ],
             profilePic: profile,
             posts: [],
             currentPosition: 'Dev - RWCA',
-            employed: true
+            employed: true,
+            cohort: 'Summer 17'
         }
    ],
    

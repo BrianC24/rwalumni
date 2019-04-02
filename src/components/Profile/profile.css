@@ -1,0 +1,95 @@
+/* .profile-container { */
+    /* height: 100vh; */
+    /* background: linear-gradient(#D64646, #252525); */
+    /* justify-content: center;
+    align-items: center; */
+    /* display: flex; */
+/* } */
+
+.profile-sidebar-container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px 10px 30px;
+    align-items: center;
+}
+
+.sidebar {
+    background-color: rgba(37, 37, 37, .1);
+    height: 100vh;
+    position: fixed;
+    /* padding: 20px 30px; */
+}
+
+.sidebar h2 {
+    /* text-align: center; */
+    color: #252525;
+}
+
+.p-image-container {
+    height: 200px;
+    margin-right: 20px;
+}
+
+.p-image-container img{
+    height: 100%;
+}
+
+.applications-container {
+    padding: 40px 40px 40px 300px;
+}
+
+.applications-container hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow: auto;
+    height: 400px;
+}
+
+.del-button {
+    color: red;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.del-button:hover {
+    font-size: 22px;
+}
+
+.apply-button {
+    background-color: #d64646;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+.apply-button:hover {
+    color: #d64646;
+    background-color: #252525;
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #d64646;
+    margin-bottom: 10px;
+}
+
+#plus {
+    padding: .2rem .8rem;
+    background-color: #d64646;
+    color: white;
+    /* border-radius: 50%; */
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+#plus:hover {
+    cursor: pointer;
+    /* padding: 5px 15px;  */
+}

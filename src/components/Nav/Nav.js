@@ -6,9 +6,9 @@ import logo from '../../assets/logo-no-back.jpeg';
 
 class Nav extends Component {
     state = {
-        isLoggedIn: false
     }
 
+    
     
     render () {
         return (
@@ -28,12 +28,12 @@ class Nav extends Component {
                     </div>
 
                     <div className="right-links">
-                        {!this.state.isLoggedIn && 
+                        {!this.props.isLoggedIn && 
                             <Link className="item" to="/login">Login</Link>
 
                         }
 
-                        {this.state.isLoggedIn && 
+                        {this.props.isLoggedIn && 
                             <Link className="item" to="/logout">Logout</Link>
                         }
                     </div>

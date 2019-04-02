@@ -19,11 +19,6 @@ class Login extends Component {
             })
         } else {
             this.props.login(user);
-            // this.setState({
-            //     username: '',
-            //     password: '',
-            //     login: false
-            // })
         }
 
     }
