@@ -34,7 +34,7 @@ class Nav extends Component {
                         }
 
                         {this.props.isLoggedIn && 
-                            <Link className="item" to="/logout">Logout</Link>
+                            <p className="item" onClick={this.props.logout}>Logout</p>
                         }
                     </div>
                     

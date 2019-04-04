@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Animated } from "react-animated-css";
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
     state = {
@@ -52,6 +53,8 @@ class Login extends Component {
                                     </Animated>
                                 }
                                 <button className="group-item login-button" type="submit">Login</button>
+                                <Link to ='/register' className="register-link">Don't Have an account? Register Here</Link>
+
                             </div>
                         </Animated>
                     </form>

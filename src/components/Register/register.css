@@ -1,0 +1,34 @@
+
+.register-container {
+    background-color: rgba(37,37,37, .1);
+    min-height: 100vh;
+}
+
+.register-container .container {
+    padding-top: 80px;
+}
+
+.register-form h1 {
+    border-bottom: 1px solid #d64646;
+    margin: 30px 0;
+}
+
+.register-btn {
+    background-color: #d64646;
+    color: white;
+    margin-bottom: 20px;
+    float: right;
+}
+
+.register-form p {
+    color: #0395f7;
+}
+
+.register-btn:hover {
+    background-color: rgb(37, 37, 37);
+    color: #d64646;
+}
+
+.pass-error {
+    color: #d64646 !important;
+}

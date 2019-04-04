@@ -27,16 +27,24 @@ class Profile extends Component {
         }
         
     }
+
+    updatePic = () => {
+        let index = this.props.users.findIndex(u => u.email === this.props.user.email);
+        console.log(index);
+        
+        // this.props.update(index, profilePic, value)
+    }
+
     render() {
         let user = this.props.user;
         return (
-            !user.fName ?
+            !user.username ?
                 <Redirect to='/login' />
                 :
                 <div className="profile-container row fixed">
                     <div className="sidebar">
                         <Animated animationIn="slideInUp" animationOut="fadeOut" isVisible={true}>
-                            <ProfileSidebar user={user} />
+                            <ProfileSidebar user={user} updatePic={this.updatePic}/>
                         </Animated>
                     </div>
                     
@@ -48,7 +56,7 @@ class Profile extends Component {
                                 <div className="form-toggle"> 
                                     <p id="plus" onClick={this.toggle}>{this.state.symbol}</p>
                                 </div>  
-                                {this.state.showForm &&  <ApForm add={this.props.add}/>}
+                                {this.state.showForm &&  <ApForm add={this.props.add} toggle={this.toggle}/>}
                             </div>
 
                             <div className="application-display">

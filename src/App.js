@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import './App.css';
 
 // mock backend data
@@ -7,7 +7,9 @@ import { data } from './data/data';
 
 // testing so i dont have to login everytime
 import uuid from 'uuid/v1';
-import profile from './assets/profile.png';
+// import profile from './assets/profile.png';
+import profileGray from './assets/profile-gray.png';
+
 
 
 // components
@@ -18,39 +20,14 @@ import Alumni from './components/Alumni/Alumni';
 import Resources from './components/Resources/Resources';
 import Forum from './components/Forum/Forum';
 import Profile from './components/Profile/Profile';
-import { appendFile } from 'fs';
+import Register from './components/Register/Register';
+
 
 class App extends Component {
   state = {
     users: data.users,
     posts: data.posts,
-    currentUser: {
-      id: uuid(),
-      username: 'bcanlas',
-      fName: 'Brian',
-      lName: 'Canlas',
-      password: 'sample',
-      email: 'sample@gmail.com',
-      phone: '(111) 111 - 111',
-      applications: [
-          {
-              id: uuid(),
-              company: 'Redwood',
-              jobTitle: 'Dev',
-              dateApplied: '10/10/18',
-              contact: 'Harrison (111) 111-111',
-              recruiter: 'NA',
-              lastContact: '10/20/18',
-              phase: 'Offer',
-              notes: 'Cool cool cool'
-          }
-      ],
-      profilePic: profile,
-      posts: [],
-      currentPosition: 'Dev - RWCA',
-      employed: true,
-      cohort: 'Summer 17'
-    },
+    currentUser: {},
     isLoggedIn: false
   }
 
@@ -80,9 +57,6 @@ class App extends Component {
   }
 
   updateApplication = (i, category , value) => {
-    console.log(i)
-    console.log(category)
-    console.log(value)
     let newApp = { ...this.state.currentUser.applications[i], [category]: value};
     let apps = [...this.state.currentUser.applications];
     apps.splice(i, 1, newApp);
@@ -103,23 +77,36 @@ class App extends Component {
     this.props.history.push("/profile");
   }
 
+  logout = () => {
+    this.setState({
+      currentUser: {},
+      isLoggedIn: false
+    }, () => this.props.history.push("/login"))
+  }
+  addUser = (user) => {
+    let newUsers = [...this.state.users, user]
+    this.setState({
+      users: newUsers,
+      currentUser: user
+    }, () => this.props.history.push("/profile"))
+  }
+
   render() {
     return (
       
       <div className="app">
-        <Nav isLoggedIn={this.state.isLoggedIn}/>
+        <Nav isLoggedIn={this.state.isLoggedIn} logout={this.logout}/>
         <div className="content">
-
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/alumni" render={(renderProps) => <Alumni />} />
+            <Route path="/alumni" render={(renderProps) => <Alumni alumni={this.state.users}/>} />
             <Route path="/resources" render={(renderProps) => <Resources />} />
             <Route path="/forum" render={(renderProps) => <Forum />} />
-            <Route path="/profile" render={(renderProps) => <Profile update={this.updateApplication} delete={this.deleteApplication} add={this.addApplication} user={this.state.currentUser}/>} />
+            <Route path="/profile" render={(renderProps) => <Profile users={this.state.users} update={this.updateApplication} delete={this.deleteApplication} add={this.addApplication} user={this.state.currentUser}/>} />
             <Route path="/login" render={(renderProps) => <Login users={this.state.users} login={this.login}/>} />
+            <Route path="/register" render={(renderProps) => <Register register={this.addUser}/>} />
           </Switch>
         </div>
-
       </div>
     );
   }

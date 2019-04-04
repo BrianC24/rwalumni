@@ -1,25 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const ProfileSidebar = (props) => {
-    return ( 
-        <div className="profile-sidebar-container">
-            <div className="p-image-container">
-                <img src={props.user.profilePic} alt=""/>
-            </div>
+class ProfileSidebar extends Component {
+    state = {
+        image: ''
+    }
 
-            <div className="sidebar-content">
-                <h2>{props.user.fName} {props.user.lName}</h2>
-                <p><strong>Email:</strong> {props.user.email}</p>
-                <p><strong>Phone:</strong> {props.user.phone}</p>
-                <p><strong>Cohort:</strong> {props.user.cohort}</p>
-                {props.user.employed ? 
-                    <p><strong>Position:</strong> {props.user.currentPosition}</p> 
-                    : 
-                    <p><strong>Position: </strong> Actively looking for new opportunities.</p>
-                }
-            </div>
-        </div>
-     );
+    imageUpload = (pic) => {
+      
+    }
+
+    render() {
+        let { user } = this.props
+        return (
+            <div className="profile-sidebar-container">
+                <div className="p-image-container">
+                    <img src={user.profilePic} alt="" />
+                </div>
+
+                <div className="sidebar-content">
+                    <h2>{user.fName} {user.lName}</h2>
+                    <p><strong>Email:</strong> {user.email}</p>
+                    <p><strong>Phone:</strong> {user.phone}</p>
+                    <p><strong>Cohort:</strong> {user.cohort}</p>
+                </div>
+            </div>);
+    }
 }
- 
+
 export default ProfileSidebar;

@@ -33,7 +33,7 @@ font-family: 'Roboto', sans-serif;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgba(214, 70, 70, .8);
+    background-color: rgba(0, 0, 0, .8);
     height: calc( 100vh - 80px );
 }
 
@@ -75,8 +75,19 @@ font-family: 'Roboto', sans-serif;
 }
 
 .login-error { 
-    color: red;
-    background-color: rgba(37,37,37, .9);
+    color: white;
+    background-color: #d64646;
+    font-size: 18px;
     padding: 10px 0px;
     border-radius: 20px;
+}
+
+.register-link {
+    color: #4d7cff;
+}
+
+.register-link:hover {
+    text-decoration: none;
+    color: #4d7cff;
+    font-size: 18px;
 }

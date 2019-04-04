@@ -19,6 +19,7 @@ class ApForm extends Component {
         e.preventDefault();
 
         this.props.add({ id: uuid(), ...this.state });
+        this.props.toggle();
 
         this.setState({
             company: '',
